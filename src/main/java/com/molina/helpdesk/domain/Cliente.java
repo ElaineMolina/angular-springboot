@@ -10,6 +10,8 @@ import java.util.List;
 
 @Entity
 public class Cliente extends Pessoa implements Serializable {
+    private static final long serialVersionID =1L;
+
     @OneToMany(mappedBy = "cliente")
     private List<Chamado> chamados = new ArrayList<>();
 

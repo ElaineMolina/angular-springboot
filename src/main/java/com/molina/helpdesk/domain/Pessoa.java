@@ -26,7 +26,8 @@ public abstract class Pessoa implements Serializable {
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "PERFIS")
     protected Set<Integer> perfis = new HashSet<>();
-    @JsonFormat(pattern = "dd-MM-yyyy")
+
+    @JsonFormat(pattern = "dd/MM/yyy")
     protected LocalDate dataCriacao = LocalDate.now();
 
     public Pessoa() {

@@ -11,12 +11,13 @@ import java.util.Objects;
 
 @Entity
 public class Chamado implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @JsonFormat(pattern = "dd-MM-yyyy")
+    @JsonFormat(pattern = "dd/MM/yyy")
     private LocalDate dataAbertura = LocalDate.now();
-    @JsonFormat(pattern = "dd-MM-yyyy")
+    @JsonFormat(pattern = "dd/MM/yyy")
     private LocalDate dataFechamento;
     private Prioridade prioridade;
     private Status status;

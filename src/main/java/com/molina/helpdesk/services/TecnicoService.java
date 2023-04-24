@@ -1,6 +1,7 @@
 package com.molina.helpdesk.services;
 
 import com.molina.helpdesk.domain.Tecnico;
+import com.molina.helpdesk.dtos.TecnicoDTO;
 import com.molina.helpdesk.services.exceptions.ObjectNotFoundException;
 import com.molina.helpdesk.repositories.TecnicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,11 @@ public class TecnicoService {
 
     public List<Tecnico> findAll() {
         return repository.findAll();
+    }
+
+    public Tecnico create(TecnicoDTO objDTO) {
+        objDTO.setId(null);
+        Tecnico newObj = new Tecnico(objDTO);
+        return repository.save(newObj);
     }
 }

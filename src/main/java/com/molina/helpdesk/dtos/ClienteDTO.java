@@ -1,18 +1,17 @@
 package com.molina.helpdesk.dtos;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.molina.helpdesk.domain.Cliente;
-import com.molina.helpdesk.domain.Tecnico;
-import com.molina.helpdesk.domain.enums.Perfil;
-import jakarta.validation.constraints.NotNull;
+        import com.fasterxml.jackson.annotation.JsonFormat;
+        import com.molina.helpdesk.domain.Cliente;
+        import com.molina.helpdesk.domain.enums.Perfil;
+        import jakarta.validation.constraints.NotNull;
 
-import java.io.Serializable;
-import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.stream.Collectors;
+        import java.io.Serializable;
+        import java.time.LocalDate;
+        import java.util.HashSet;
+        import java.util.Set;
+        import java.util.stream.Collectors;
 
-public class TecnicoDTO implements Serializable {
+public class ClienteDTO implements Serializable {
     protected Integer id;
     @NotNull(message = "O campo NOME é requerido")
     protected String nome;
@@ -26,12 +25,12 @@ public class TecnicoDTO implements Serializable {
     @JsonFormat(pattern = "dd/MM/yyyy")
     protected LocalDate dataCriacao = LocalDate.now();
 
-    public TecnicoDTO() {
+    public ClienteDTO() {
         super();
         addPerfil(Perfil.CLIENTE);
     }
 
-    public TecnicoDTO(Tecnico obj) {
+    public ClienteDTO(Cliente obj) {
         this.id = obj.getId();
         this.nome = obj.getNome();
         this.cpf = obj.getCpf();

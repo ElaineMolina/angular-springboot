@@ -8,11 +8,11 @@ import com.molina.helpdesk.domain.enums.Status;
 import com.molina.helpdesk.dtos.ChamadoDTO;
 import com.molina.helpdesk.repositories.ChamadoRepository;
 import com.molina.helpdesk.services.exceptions.ObjectNotFoundException;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;

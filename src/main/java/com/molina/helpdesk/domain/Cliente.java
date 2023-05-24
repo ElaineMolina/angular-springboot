@@ -4,9 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.molina.helpdesk.domain.enums.Perfil;
 import com.molina.helpdesk.dtos.ClienteDTO;
 import com.molina.helpdesk.dtos.TecnicoDTO;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

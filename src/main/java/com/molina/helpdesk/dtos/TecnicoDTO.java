@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.molina.helpdesk.domain.Cliente;
 import com.molina.helpdesk.domain.Tecnico;
 import com.molina.helpdesk.domain.enums.Perfil;
-import jakarta.validation.constraints.NotNull;
 
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;

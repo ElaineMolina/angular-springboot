@@ -7,10 +7,11 @@ import com.molina.helpdesk.repositories.PessoaRepository;
 import com.molina.helpdesk.services.exceptions.DataIntegrityViolationException;
 import com.molina.helpdesk.services.exceptions.ObjectNotFoundException;
 import com.molina.helpdesk.repositories.TecnicoRepository;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,6 +22,8 @@ public class TecnicoService {
 
     @Autowired
     private PessoaRepository pessoaRepository;
+    @Autowired
+    private BCryptPasswordEncoder encoder;
 
     public Tecnico findById(Integer id){
         Optional<Tecnico> obj = repository.findById(id);
@@ -33,6 +36,7 @@ public class TecnicoService {
 
     public Tecnico create(TecnicoDTO objDTO) {
         objDTO.setId(null);
+        objDTO.setSenha(encoder.encode(objDTO.getSenha()));
         validaPorCpfEEmail(objDTO);
         Tecnico newObj = new Tecnico(objDTO);
         return repository.save(newObj);

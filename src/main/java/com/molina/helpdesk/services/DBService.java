@@ -7,9 +7,7 @@ import com.molina.helpdesk.domain.enums.Perfil;
 import com.molina.helpdesk.domain.enums.Prioridade;
 import com.molina.helpdesk.domain.enums.Status;
 import com.molina.helpdesk.repositories.ChamadoRepository;
-import com.molina.helpdesk.repositories.ClienteRepository;
 import com.molina.helpdesk.repositories.PessoaRepository;
-import com.molina.helpdesk.repositories.TecnicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +20,7 @@ public class DBService {
     private PessoaRepository pessoaRepository;
     @Autowired
     private ChamadoRepository chamadoRepository;
+
 
     public void instanciaDB(){
         Tecnico tec1 = new Tecnico(null, "Máscara Smith", "550.482.150-95", "mascara@mail.com", ("123"));

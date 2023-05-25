@@ -1,15 +1,15 @@
 package com.molina.helpdesk.dtos;
 
 public class CredenciaisDTO {
-    private String emai;
+    private String email;
     private String senha;
 
-    public String getEmai() {
-        return emai;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmai(String emai) {
-        this.emai = emai;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getSenha() {

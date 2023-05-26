@@ -18,13 +18,17 @@ public abstract class Pessoa implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
+
+    @Column(unique = true, length = 60)
     protected String nome;
 
     @CPF
-    @Column(unique = true)
+    @Column(unique = true, length = 14)
     protected String cpf;
-    @Column(unique = true)
+
+    @Column(unique = true, length = 35)
     protected String email;
+    @Column(unique = true)
     protected String senha;
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "PERFIS")
